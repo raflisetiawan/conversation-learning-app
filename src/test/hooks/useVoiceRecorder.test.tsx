@@ -7,9 +7,8 @@ class MockMediaRecorder {
   state = 'inactive';
   ondataavailable: ((e: { data: Blob }) => void) | null = null;
   onstop: (() => void) | null = null;
-  private _stream: MediaStream;
 
-  constructor(stream: MediaStream) { this._stream = stream; }
+  constructor(_stream: MediaStream) { /* stream not needed in mock */ }
 
   start() {
     this.state = 'recording';
